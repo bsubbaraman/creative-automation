@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<title> phenakistoscopes </title>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="shortcut icon" type="image/jpg" href="../images/favicon_j.png"/>
+<link rel="stylesheet" type="text/css" href="../../style.css">
+<link rel="preconnect" href="https://fonts.gstatic.com">
+<link href="https://fonts.googleapis.com/css2?family=Inter&display=swap" rel="stylesheet"> 
+</head>
+
+<div class="topnav">
+  <a id="button_purp" href="../../index.html">Home</a>
+</div>
+<section class="main-container-section">
+  <body>
+    <a class="anchor" id="top"></a>
+      <div class="headline padding-bottom-half">
+        <mark>an ender, a midi controller, and a p5.js sketch walk into a bar</mark>
+      </div>
+      <div class="post-meta center padding-bottom-std"> last edited: 2023.10.09 </div>
+
+      <div class="center">
+        <video width="400" height="400" controls>
+          <source src="./images/midi-control-test.mp4" type="video/mp4">
+        </video>
+      </div>
+
+      <ul>
+        <li>
+          Set up basic connection between the <a href="https://www.akaipro.com/midimix">Akai Midimix Control Surface</a> and an ender using p5.fab. This is the same midi controller that bunnie is using for <a href="https://github.com/bunnie/jubiris/blob/main/midi-ctrl/miduet.py">jubiris</a>.
+        </li>
+        <li>
+          Reading in midi values in e.g. a p5 sketch is straightforward using WebMidi. Midi messages have a few dimensions that can be useful including message type, note, and velocity. Data messages are values 0-127; mapping to e.g. 0-220 to control the x-axis of a printer loses a bit of resolution.
+        </li>
+        <li>
+          Messages come individually. For the axis control shown above I'm consolidating & sending messages every ~100ms so that movement happens on multiple axis simultaneously, rather than many small movements on each axis.
+        </li>
+      </ul>
+      
+  </body>
+</section>
+</html>
